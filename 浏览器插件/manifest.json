@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "超星学习通自动搜题助手",
+  "version": "1.0.0",
+  "description": "自动识别超星学习通题目并搜索答案，支持单选、多选、判断、填空题",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "https://*.chaoxing.com/*",
+    "https://*.cx.com/*",
+    "https://api.pear🍐ink.com/*",
+    "https://api.muketool.com/*",
+    "https://cx.icodef.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.chaoxing.com/*",
+        "https://mooc1.chaoxing.com/*",
+        "https://mooc1-1.chaoxing.com/*",
+        "https://mooc1-2.chaoxing.com/*"
+      ],
+      "js": ["lib/crypto-js.min.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

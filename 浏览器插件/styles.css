@@ -1,0 +1,186 @@
+/* styles.css - 浮动面板样式 */
+
+#chaoxing-helper-panel {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 300px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 999999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color: #333;
+  overflow: hidden;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+#chaoxing-helper-panel .chx-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
+  user-select: none;
+}
+
+#chaoxing-helper-panel .chx-header:active {
+  cursor: grabbing;
+}
+
+#chaoxing-helper-panel .chx-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#chaoxing-helper-panel .chx-toggle {
+  cursor: pointer;
+  font-size: 16px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+#chaoxing-helper-panel .chx-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#chaoxing-helper-panel .chx-body {
+  padding: 12px;
+}
+
+#chaoxing-helper-panel .chx-status {
+  background: #f0f2ff;
+  color: #667eea;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#chaoxing-helper-panel .chx-progress {
+  position: relative;
+  height: 20px;
+  background: #e8eaf6;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+#chaoxing-helper-panel .chx-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  width: 0%;
+}
+
+#chaoxing-helper-panel .chx-progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11px;
+  font-weight: 600;
+  color: #333;
+}
+
+#chaoxing-helper-panel .chx-log {
+  max-height: 120px;
+  overflow-y: auto;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 8px;
+  border-radius: 6px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 11px;
+  margin-bottom: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #1e1e1e;
+}
+
+#chaoxing-helper-panel .chx-log::-webkit-scrollbar {
+  width: 4px;
+}
+
+#chaoxing-helper-panel .chx-log::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+#chaoxing-helper-panel .chx-log::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 2px;
+}
+
+#chaoxing-helper-panel .chx-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+#chaoxing-helper-panel .chx-btn {
+  flex: 1;
+  padding: 7px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#chaoxing-helper-panel .chx-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+#chaoxing-helper-panel .chx-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#chaoxing-helper-panel .chx-btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+#chaoxing-helper-panel .chx-btn-success {
+  background: #4CAF50;
+  color: white;
+}
+
+#chaoxing-helper-panel .chx-btn-warning {
+  background: #ff9800;
+  color: white;
+}
+
+#chaoxing-helper-panel .chx-options {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+#chaoxing-helper-panel .chx-options label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #666;
+  cursor: pointer;
+}
+
+#chaoxing-helper-panel .chx-options input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #667eea;
+}

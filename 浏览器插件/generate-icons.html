@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>生成图标</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; text-align: center; }
+    canvas { margin: 10px; border: 1px solid #ddd; }
+    button { padding: 10px 20px; margin: 10px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>生成插件图标</h1>
+  <p>点击下方按钮下载对应尺寸的图标，保存到 icons 文件夹</p>
+  <canvas id="c16" width="16" height="16"></canvas>
+  <canvas id="c48" width="48" height="48"></canvas>
+  <canvas id="c128" width="128" height="128"></canvas>
+  <br>
+  <button onclick="download('c16', 'icon16.png')">下载 16x16</button>
+  <button onclick="download('c48', 'icon48.png')">下载 48x48</button>
+  <button onclick="download('c128', 'icon128.png')">下载 128x128</button>
+
+  <script>
+    function drawIcon(canvasId) {
+      const canvas = document.getElementById(canvasId);
+      const ctx = canvas.getContext('2d');
+      const size = canvas.width;
+
+      // 背景渐变
+      const grad = ctx.createLinearGradient(0, 0, size, size);
+      grad.addColorStop(0, '#667eea');
+      grad.addColorStop(1, '#764ba2');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.roundRect(0, 0, size, size, size * 0.15);
+      ctx.fill();
+
+      // 搜索图标
+      const cx = size * 0.45;
+      const cy = size * 0.42;
+      const r = size * 0.2;
+      const lineWidth = size * 0.06;
+
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = lineWidth;
+      ctx.lineCap = 'round';
+
+      // 放大镜圆圈
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // 放大镜手柄
+      const handleStart = {
+        x: cx + r * Math.cos(Math.PI * 0.25),
+        y: cy + r * Math.sin(Math.PI * 0.25)
+      };
+      const handleEnd = {
+        x: handleStart.x + size * 0.15,
+        y: handleStart.y + size * 0.15
+      };
+      ctx.beginPath();
+      ctx.moveTo(handleStart.x, handleStart.y);
+      ctx.lineTo(handleEnd.x, handleEnd.y);
+      ctx.stroke();
+
+      // 书本图标（小）
+      const bookX = size * 0.55;
+      const bookY = size * 0.6;
+      const bookW = size * 0.25;
+      const bookH = size * 0.18;
+      ctx.fillStyle = 'rgba(255,255,255,0.9)';
+      ctx.fillRect(bookX, bookY, bookW, bookH);
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = size * 0.02;
+      ctx.strokeRect(bookX, bookY, bookW, bookH);
+      // 书脊线
+      ctx.beginPath();
+      ctx.moveTo(bookX + bookW * 0.1, bookY);
+      ctx.lineTo(bookX + bookW * 0.1, bookY + bookH);
+      ctx.stroke();
+    }
+
+    ['c16', 'c48', 'c128'].forEach(drawIcon);
+
+    function download(canvasId, filename) {
+      const canvas = document.getElementById(canvasId);
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+  </script>
+</body>
+</html>
