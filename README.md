@@ -94,7 +94,7 @@ chaoxing-ai-helper/
 
 | 平台 | 官网 | 模型 | 价格 | 推荐度 |
 |------|------|------|------|--------|
-| **DeepSeek** | [platform.deepseek.com](https://platform.deepseek.com) | deepseek-chat | ¥1/百万token | ⭐⭐⭐⭐⭐ |
+| **DeepSeek** | [platform.deepseek.com](https://platform.deepseek.com) | deepseek-v4-flash | ¥1/百万token | ⭐⭐⭐⭐⭐ |
 | OpenAI | [platform.openai.com](https://platform.openai.com) | gpt-4o-mini | $0.15/百万token | ⭐⭐⭐⭐ |
 | ChatAnywhere | [chatanywhere.tech](https://chatanywhere.tech) | gpt-3.5-turbo | 免费额度 | ⭐⭐⭐ |
 | 自定义 | 任意 OpenAI 兼容接口 | 自定义 | - | ⭐⭐⭐ |
