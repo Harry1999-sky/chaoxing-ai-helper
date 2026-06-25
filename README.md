@@ -1,6 +1,6 @@
-# 超星学习通 AI 搜题助手
+# 超⭐学习通 AI 搜题助手
 
-> 🤖 自动识别超星学习通题目，接入 AI 大模型搜题并填写答案
+> 🤖 自动识别超⭐学习通题目，接入 AI 大模型搜题并填写答案
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow.svg)
@@ -74,7 +74,7 @@ chaoxing-ai-helper/
 3. 按 `Ctrl+S` 保存
 
 #### 步骤 4：配置 API Key
-1. 打开超星学习通的作业/考试页面
+1. 打开超⭐学习通的作业页面
 2. 点击页面右下角的 **⚙️ 设置** 按钮
 3. 选择 AI 接口（默认 DeepSeek）
 4. 粘贴 API Key 并保存
@@ -163,7 +163,7 @@ chaoxing-ai-helper/
 - 📌 **权利保护** - 请充分尊重教师、学校的规定，使用时避免违规
 
 #### 服务条款遵守
-- ⚖️ **遵守协议** - 必须遵守超星学习通、各 AI 平台的服务条款与使用协议
+- ⚖️ **遵守协议** - 必须遵守超⭐学习通、各 AI 平台的服务条款与使用协议
 - ⚖️ **禁止滥用** - 禁止过度调用 API、批量刷题、恶意使用等行为
 - ⚖️ **平台损失** - 违规使用造成的对平台、其他用户的损失与开发者无关
 
